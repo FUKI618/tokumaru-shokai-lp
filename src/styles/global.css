@@ -11,8 +11,8 @@
   --color-cta-light: #22a382;
 
   /* Gold - 品格・プレミアム・実績 */
-  --color-gold: #c8963e;
-  --color-gold-light: #d4a854;
+  --color-gold: #8b641f;
+  --color-gold-light: #c7963b;
 
   /* Warm Ivory - 親近感・居心地のよさ */
   --color-cream: #f7f5f0;
@@ -20,13 +20,13 @@
 
   /* Text - ウォームグレー（冷たくない） */
   --color-warm-gray: #4a4540;
-  --color-warm-gray-light: #8a8480;
+  --color-warm-gray-light: #6f6964;
 
   /* LINE Official Green */
-  --color-line: #06c755;
+  --color-line: #008a43;
 
   /* Subtle alert (urgency without alarm) */
-  --color-alert: #d4881e;
+  --color-alert: #9c6210;
   --color-alert-light: #e09a35;
 
   --font-sans: "Noto Sans JP", sans-serif;
@@ -35,6 +35,10 @@
 html {
   scroll-behavior: smooth;
   font-size: 17px;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
 }
 
 body {
@@ -50,4 +54,21 @@ body {
 
 .animate-pulse-slow {
   animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* アクセシビリティ: 視覚過敏・前庭障害のユーザー向け (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-slow,
+  .animate-ping,
+  .animate-pulse {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

@@ -1,9 +1,12 @@
 ---
+import { homePath, sectionPath, assetPath } from "../lib/site";
+const logoUrl = assetPath("logo.png");
 ---
 <header class="sticky top-0 z-50 bg-navy text-white shadow-lg">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
     <!-- Logo & Business Name -->
-    <a href="/" class="flex items-center gap-2">
+    <a href={homePath} class="flex items-center gap-2">
+      <img src={logoUrl} alt="徳丸商会ロゴ" width="36" height="36" class="w-9 h-9 rounded-full" />
       <span class="text-xl font-bold tracking-tight">徳丸商会</span>
     </a>
 
@@ -14,10 +17,10 @@
 
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex items-center gap-6 text-sm">
-      <a href="#service" class="hover:text-gold transition-colors">サービス</a>
-      <a href="#items" class="hover:text-gold transition-colors">買取品目</a>
-      <a href="#area" class="hover:text-gold transition-colors">対応エリア</a>
-      <a href="#faq" class="hover:text-gold transition-colors">よくある質問</a>
+      <a href={sectionPath("service")} class="hover:text-gold transition-colors">サービス</a>
+      <a href={sectionPath("items")} class="hover:text-gold transition-colors">買取品目</a>
+      <a href={sectionPath("area")} class="hover:text-gold transition-colors">対応エリア</a>
+      <a href={sectionPath("faq")} class="hover:text-gold transition-colors">よくある質問</a>
     </nav>
 
     <!-- CTA Buttons -->

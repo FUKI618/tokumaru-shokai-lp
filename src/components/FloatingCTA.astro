@@ -2,7 +2,7 @@
 ---
 <div
   x-data="{ show: false }"
-  x-init="window.addEventListener('scroll', () => { show = window.scrollY > 600 })"
+  x-init="window.addEventListener('scroll', () => { show = window.scrollY > 320 })"
   x-show="show"
   x-transition:enter="transition ease-out duration-300"
   x-transition:enter-start="translate-y-full opacity-0"
@@ -15,7 +15,7 @@
 >
   <!-- Micro-copy bar -->
   <div class="bg-navy text-center py-1.5 px-4">
-    <p class="text-xs text-white/60">
+    <p class="text-xs text-white/75">
       <span class="text-gold font-bold">買取強化中</span> ― 査定だけでもOK・しつこい営業なし
     </p>
   </div>

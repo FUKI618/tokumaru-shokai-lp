@@ -1,11 +1,16 @@
 ---
+import { privacyPolicyPath, sectionPath, assetPath } from "../lib/site";
+const logoUrl = assetPath("logo.png");
 ---
 <footer class="bg-navy-dark text-gray-400 py-12">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <!-- Company Info -->
       <div>
-        <h3 class="text-white font-bold text-lg mb-4">徳丸商会</h3>
+        <div class="flex items-center gap-3 mb-4">
+          <img src={logoUrl} alt="徳丸商会ロゴ" width="40" height="40" class="w-10 h-10 rounded-full" />
+          <h3 class="text-white font-bold text-lg">徳丸商会</h3>
+        </div>
         <p class="text-sm leading-relaxed mb-2">
           名古屋市・近郊エリアの出張買取サービス
         </p>
@@ -37,11 +42,11 @@
       <div>
         <h3 class="text-white font-bold text-lg mb-4">メニュー</h3>
         <nav class="flex flex-col gap-2 text-sm">
-          <a href="#service" class="hover:text-gold transition-colors">サービス内容</a>
-          <a href="#items" class="hover:text-gold transition-colors">買取品目</a>
-          <a href="#area" class="hover:text-gold transition-colors">対応エリア</a>
-          <a href="#faq" class="hover:text-gold transition-colors">よくある質問</a>
-          <a href="/privacy-policy" class="hover:text-gold transition-colors">プライバシーポリシー</a>
+          <a href={sectionPath("service")} class="hover:text-gold transition-colors">サービス内容</a>
+          <a href={sectionPath("items")} class="hover:text-gold transition-colors">買取品目</a>
+          <a href={sectionPath("area")} class="hover:text-gold transition-colors">対応エリア</a>
+          <a href={sectionPath("faq")} class="hover:text-gold transition-colors">よくある質問</a>
+          <a href={privacyPolicyPath} class="hover:text-gold transition-colors">プライバシーポリシー</a>
         </nav>
       </div>
     </div>
