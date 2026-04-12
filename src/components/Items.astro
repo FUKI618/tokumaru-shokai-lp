@@ -60,9 +60,9 @@ const items = [
       中古・リサイクル品を幅広く高価買取いたします
     </p>
 
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6">
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 md:gap-6">
       {items.map((item) => (
-        <div class="flex flex-col items-center gap-3 p-4 rounded-xl bg-cream hover:bg-cream-dark transition-colors">
+        <div class="flex flex-col items-center gap-2 p-3 md:p-4 rounded-xl bg-cream hover:bg-cream-dark transition-colors">
           <div class="text-navy">
             <Fragment set:html={item.icon} />
           </div>
