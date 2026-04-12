@@ -18,9 +18,9 @@ const { title, description, slug } = Astro.props;
 
 <Layout title={title} description={description}>
   <Header />
-  <SideNav currentSlug={slug} />
   <main>
     <slot />
+    <SideNav currentSlug={slug} />
     <Area />
     <CTASection id="contact" variant="bottom" />
   </main>
