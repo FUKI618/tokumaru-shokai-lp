@@ -6,41 +6,30 @@ interface Props {
 }
 
 const { currentSlug } = Astro.props;
+
+const allPages = [
+  { slug: "", shortTitle: "総合トップ", href: homePath },
+  ...specializedPages.map((p) => ({ slug: p.slug, shortTitle: p.shortTitle, href: pagePath(p.slug) })),
+];
 ---
 
-<!-- 買取メニューナビゲーション -->
-<section class="py-8 md:py-12 bg-cream">
-  <div class="max-w-4xl mx-auto px-4">
-    <p class="text-center text-navy font-bold text-sm md:text-base mb-4">
-      お探しのサービスをお選びください
-    </p>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 md:gap-3">
-      <a
-        href={homePath}
-        class:list={[
-          "flex items-center justify-center gap-1.5 px-3 py-3 md:py-3.5 rounded-xl text-xs md:text-sm font-bold text-center transition-all",
-          !currentSlug
-            ? "bg-navy text-white shadow-md"
-            : "bg-white text-warm-gray border border-cream-dark hover:border-navy/30 hover:shadow-sm"
-        ]}
-      >
-        <span class="text-[10px] opacity-60">▪</span>
-        総合トップ
-      </a>
-      {specializedPages.map((page) => (
+<!-- サービス一覧ナビ：LPのセクションとして自然に溶け込むデザイン -->
+<nav class="border-y border-cream-dark bg-white" aria-label="サービスメニュー">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="flex items-center gap-1 py-2.5 overflow-x-auto scrollbar-hide">
+      {allPages.map((page) => (
         <a
-          href={pagePath(page.slug)}
+          href={page.href}
           class:list={[
-            "flex items-center justify-center gap-1.5 px-3 py-3 md:py-3.5 rounded-xl text-xs md:text-sm font-bold text-center transition-all",
-            currentSlug === page.slug
-              ? "bg-navy text-white shadow-md"
-              : "bg-white text-warm-gray border border-cream-dark hover:border-navy/30 hover:shadow-sm"
+            "flex-shrink-0 px-4 py-2 rounded-full text-xs md:text-[13px] font-bold transition-all whitespace-nowrap",
+            (page.slug === "" ? !currentSlug : currentSlug === page.slug)
+              ? "bg-navy text-white"
+              : "text-warm-gray hover:bg-cream hover:text-navy"
           ]}
         >
-          <span class="text-[10px] opacity-60">▪</span>
           {page.shortTitle}
         </a>
       ))}
     </div>
   </div>
-</section>
+</nav>
