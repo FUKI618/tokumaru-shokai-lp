@@ -47,6 +47,12 @@ section[id] {
   scroll-margin-top: 5.5rem;
 }
 
+/* 日本語の単語・助詞の途中で改行しない */
+body {
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-warm-gray);
