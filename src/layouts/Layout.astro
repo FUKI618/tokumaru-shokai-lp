@@ -8,6 +8,7 @@ interface Props {
 import "../styles/global.css";
 import { assetPath, homePath } from "../lib/site";
 import { faqsToJsonLd } from "../data/faq";
+import ScrollToTop from "../components/ScrollToTop.astro";
 import { company } from "../data/company";
 
 const { title, description, includeTopSchemas = false } = Astro.props;
@@ -22,8 +23,6 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
 
 <!doctype html>
 <html lang="ja">
-<!-- ページ読み込み直後に即座にトップへ（途中表示防止） -->
-<script is:inline>if(!location.hash){history.scrollRestoration='manual';window.scrollTo(0,0);}</script>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -179,6 +178,7 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
     )}
   </head>
   <body class="antialiased">
+    <ScrollToTop />
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W493L98W"
@@ -193,13 +193,6 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
       window.Alpine = Alpine;
       Alpine.start();
 
-      // ブラウザの前回スクロール位置復元を無効化し、常にトップから表示
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-      if (!window.location.hash) {
-        window.scrollTo(0, 0);
-      }
       // smoothスクロールはページ表示完了後に有効化
       requestAnimationFrame(() => {
         document.documentElement.classList.add('loaded');

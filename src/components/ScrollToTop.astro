@@ -1,0 +1,19 @@
+<!-- ページトップ強制スクロール（LINEアプリ内ブラウザ対応） -->
+<script is:inline>
+(function(){
+  if(location.hash) return;
+  // 即座に
+  try { window.scrollTo({top:0,left:0,behavior:'instant'}); } catch(e) { window.scrollTo(0,0); }
+  // DOM準備後に再度
+  document.addEventListener('DOMContentLoaded', function(){
+    window.scrollTo(0,0);
+  });
+  // 完全読み込み後に再度（画像等の遅延読み込み後）
+  window.addEventListener('load', function(){
+    setTimeout(function(){ window.scrollTo(0,0); }, 0);
+    setTimeout(function(){ window.scrollTo(0,0); }, 100);
+  });
+  // スクロール復元を無効化
+  if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+})();
+</script>
