@@ -6,21 +6,21 @@ const results = [
     name: "冷蔵庫",
     detail: "大型冷蔵庫 500L以上",
     price: "39,000",
-    image: assetPath("images/results/refrigerator.png"),
+    image: assetPath("images/results/refrigerator.jpg"),
     alt: "高価買取した大型冷蔵庫の写真",
   },
   {
     name: "洗濯機",
     detail: "ドラム式洗濯乾燥機",
     price: "24,500",
-    image: assetPath("images/results/washing-machine.png"),
+    image: assetPath("images/results/washing-machine.jpg"),
     alt: "高価買取したドラム式洗濯機の写真",
   },
   {
     name: "エアコン",
     detail: "ルームエアコン 取外し込み",
     price: "21,000",
-    image: assetPath("images/results/aircon.png"),
+    image: assetPath("images/results/aircon.jpg"),
     alt: "高価買取したルームエアコンの写真",
   },
   {
@@ -45,13 +45,13 @@ const results = [
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       {results.map((item) => (
         <div class="bg-white rounded-xl shadow-sm border border-cream-dark overflow-hidden">
-          <div class="aspect-square bg-white overflow-hidden flex items-center justify-center p-5">
+          <div class="aspect-[4/3] overflow-hidden">
             <img
               src={item.image}
               alt={item.alt}
-              width="400"
-              height="400"
-              class="w-full h-full object-contain"
+              width="600"
+              height="450"
+              class="w-full h-full object-cover"
               loading="lazy"
               decoding="async"
             />
