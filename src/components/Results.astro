@@ -20,7 +20,7 @@ const results = [
     name: "エアコン",
     detail: "ルームエアコン 取外し込み",
     price: "21,000",
-    image: assetPath("images/results/aircon.jpg"),
+    image: assetPath("images/results/aircon.png"),
     alt: "高価買取したルームエアコンの写真",
   },
   {
@@ -45,7 +45,7 @@ const results = [
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       {results.map((item) => (
         <div class="bg-white rounded-xl shadow-sm border border-cream-dark overflow-hidden">
-          <div class="aspect-square bg-cream overflow-hidden flex items-center justify-center p-4">
+          <div class="aspect-square bg-white overflow-hidden flex items-center justify-center p-5">
             <img
               src={item.image}
               alt={item.alt}
