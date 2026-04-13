@@ -26,6 +26,9 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     <title>{title}</title>
@@ -182,9 +185,11 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
       window.Alpine = Alpine;
       Alpine.start();
 
-      // smoothスクロールはページ表示完了後に有効化
-      requestAnimationFrame(() => {
-        document.documentElement.classList.add('loaded');
+      // smoothスクロールはページ完全読み込み後に有効化（スクロールジャンプ防止）
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.documentElement.classList.add('loaded');
+        }, 500);
       });
     </script>
   </body>
