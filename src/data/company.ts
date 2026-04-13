@@ -13,7 +13,6 @@ export const company = {
     { label: "費用", value: "出張費・見積もり・査定費無料" },
     { label: "スピード", value: "最短30分、当日〜翌日対応のご相談可" },
     { label: "相談方法", value: "電話・LINEで受付" },
-    { label: "拠点", value: "愛知県名古屋市中区" },
     { label: "対応エリア", value: "名古屋市全域と近郊エリア" },
   ],
 } as const;
