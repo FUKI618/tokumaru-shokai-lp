@@ -34,7 +34,7 @@ const painPoints = [
 ---
 
 <section id="pain-points" class="py-12 md:py-20 bg-cream">
-  <div class="max-w-6xl mx-auto px-4">
+  <div class="max-w-6xl mx-auto px-5">
     <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-4">
       こんなお悩みありませんか？
     </h2>
@@ -48,7 +48,7 @@ const painPoints = [
           <div class="w-12 h-12 md:w-14 md:h-14 bg-navy/5 rounded-xl flex items-center justify-center text-navy mb-3 md:mb-4 group-hover:bg-navy/10 transition-colors">
             <Fragment set:html={item.icon} />
           </div>
-          <p class="font-bold text-navy text-[0.9rem] md:text-base mb-2 md:mb-3 leading-normal">{item.pain}</p>
+          <p class="font-bold text-navy text-sm mb-2 leading-snug">{item.pain}</p>
           <div class="flex items-start gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-cta flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>

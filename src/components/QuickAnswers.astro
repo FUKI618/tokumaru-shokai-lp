@@ -3,7 +3,7 @@ import { company } from "../data/company";
 ---
 
 <section id="answers" class="py-8 md:py-12 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
+  <div class="max-w-6xl mx-auto px-5">
     <div class="max-w-3xl mx-auto text-center mb-6 md:mb-8">
       <p class="text-gold font-bold text-xs md:text-sm mb-2">まず知りたいことを短く整理</p>
       <h2 class="text-xl md:text-3xl font-bold text-navy mb-3">
@@ -17,7 +17,7 @@ import { company } from "../data/company";
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
       {company.quickFacts.map((fact) => (
         <div class="rounded-2xl border border-cream-dark bg-cream p-5">
-          <p class="text-xs font-bold text-gold mb-2">{fact.label}</p>
+          <p class="text-sm font-bold text-gold mb-2">{fact.label}</p>
           <p class="text-navy font-bold leading-snug">{fact.value}</p>
         </div>
       ))}
