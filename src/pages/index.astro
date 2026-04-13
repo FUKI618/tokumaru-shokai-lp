@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import QuickAnswers from "../components/QuickAnswers.astro";
 import PainPoints from "../components/PainPoints.astro";
 import Urgency from "../components/Urgency.astro";
 import Service from "../components/Service.astro";
@@ -11,6 +12,7 @@ import Items from "../components/Items.astro";
 import Results from "../components/Results.astro";
 import BeforeAfter from "../components/BeforeAfter.astro";
 import Testimonials from "../components/Testimonials.astro";
+import CompanyInfo from "../components/CompanyInfo.astro";
 import Area from "../components/Area.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
@@ -18,12 +20,14 @@ import FloatingCTA from "../components/FloatingCTA.astro";
 ---
 
 <Layout
-  title="名古屋の出張買取なら徳丸商会｜家電・家具を高額買取・出張費無料"
-  description="名古屋市・近郊エリアの出張買取は徳丸商会へ。家電・家具・ブランド品をその場で現金買取。出張費・査定費0円、最短30分で訪問。052-990-3968"
+  title="名古屋の出張買取・不用品回収・遺品整理なら徳丸商会"
+  description="名古屋市中区の徳丸商会。家電・家具・ブランド品の出張買取、不用品回収、遺品整理、残置物撤去に対応。出張費・査定費0円、最短30分でご相談可能。052-990-3968"
+  includeTopSchemas={true}
 >
   <Header />
   <main>
     <Hero />
+    <QuickAnswers />
     <PainPoints />
     <Urgency />
     <Service />
@@ -33,6 +37,7 @@ import FloatingCTA from "../components/FloatingCTA.astro";
     <Results />
     <BeforeAfter />
     <Testimonials />
+    <CompanyInfo />
     <Area />
     <FAQ />
     <CTASection id="contact" variant="bottom" />
