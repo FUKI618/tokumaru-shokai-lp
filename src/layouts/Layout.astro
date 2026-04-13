@@ -190,6 +190,14 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
       import Alpine from "alpinejs";
       window.Alpine = Alpine;
       Alpine.start();
+
+      // ブラウザの前回スクロール位置復元を無効化し、常にトップから表示
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
     </script>
   </body>
 </html>
