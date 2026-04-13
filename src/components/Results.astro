@@ -45,13 +45,13 @@ const results = [
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       {results.map((item) => (
         <div class="bg-white rounded-xl shadow-sm border border-cream-dark overflow-hidden">
-          <div class="aspect-[4/3] overflow-hidden">
+          <div class="aspect-square bg-cream overflow-hidden flex items-center justify-center p-4">
             <img
               src={item.image}
               alt={item.alt}
               width="400"
-              height="300"
-              class="w-full h-full object-cover"
+              height="400"
+              class="w-full h-full object-contain"
               loading="lazy"
               decoding="async"
             />
