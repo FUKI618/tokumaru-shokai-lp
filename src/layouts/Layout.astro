@@ -22,6 +22,8 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
 
 <!doctype html>
 <html lang="ja">
+<!-- ページ読み込み直後に即座にトップへ（途中表示防止） -->
+<script is:inline>if(!location.hash){history.scrollRestoration='manual';window.scrollTo(0,0);}</script>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -198,6 +200,10 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
       if (!window.location.hash) {
         window.scrollTo(0, 0);
       }
+      // smoothスクロールはページ表示完了後に有効化
+      requestAnimationFrame(() => {
+        document.documentElement.classList.add('loaded');
+      });
     </script>
   </body>
 </html>
