@@ -66,11 +66,16 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
       rel="stylesheet"
     />
 
-    <!-- Google Tag Manager: 一時無効化中 -->
+    <!-- GTMはbody末尾に配置（headのCSS読み込みをブロックしないため） -->
   </head>
   <body class="antialiased">
     <ScrollToTop />
-    <!-- Google Tag Manager (noscript): 一時無効化中 -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W493L98W"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
     <slot />
 
@@ -86,6 +91,15 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
           document.documentElement.classList.add('loaded');
         }, 500);
       });
+    </script>
+
+    <!-- Google Tag Manager (body末尾配置: headのCSS読み込みをブロックしない) -->
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-W493L98W');
     </script>
 
     <!-- JSON-LD: body末尾に配置（headのCSS読み込みをブロックしないため） -->
