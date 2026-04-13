@@ -45,13 +45,11 @@ const steps = [
 
           {/* Content */}
           <div class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark flex-1">
-            <div class="flex items-center gap-2 md:gap-3 mb-1.5 md:mb-2">
-              <span class="text-xs md:text-sm font-bold text-gold bg-gold/10 px-2.5 py-0.5 md:px-3 md:py-1 rounded-full">
-                STEP {step.number}
-              </span>
-              <h3 class="font-bold text-navy text-[0.95rem] md:text-lg">{step.title}</h3>
-            </div>
-            <p class="text-warm-gray text-xs md:text-base leading-[1.8]">{step.description}</p>
+            <span class="inline-block text-xs font-bold text-gold bg-gold/10 px-2.5 py-0.5 rounded-full mb-2">
+              STEP {step.number}
+            </span>
+            <h3 class="font-bold text-navy text-sm md:text-lg mb-1">{step.title}</h3>
+            <p class="text-warm-gray text-sm leading-relaxed">{step.description}</p>
           </div>
         </div>
       ))}
