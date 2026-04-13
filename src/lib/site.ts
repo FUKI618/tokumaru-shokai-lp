@@ -1,5 +1,6 @@
 // Keep deployment routing in one place and follow Astro's configured base path.
-export const basePath = import.meta.env.BASE_URL;
+const rawBase = import.meta.env.BASE_URL;
+export const basePath = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
 
 export const homePath = basePath;
 export const privacyPolicyPath = `${basePath}privacy-policy/`;
